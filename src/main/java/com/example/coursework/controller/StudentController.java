@@ -20,7 +20,7 @@ public class StudentController {
 
     @PostMapping("saveOrEditGroup")
     public HttpEntity<?> saveOrEditGroup(@RequestBody StudentDto studentDto) {
-        ApiResponse response = studentService.saveOrEditGroup(studentDto);
+        ApiResponse response = studentService.saveOrEditStudent(studentDto);
         return ResponseEntity.status(response.isSuccess() ?
                 response.getMessage().equals("Edited") ? 202 : 201 : 409)
                 .body(response);

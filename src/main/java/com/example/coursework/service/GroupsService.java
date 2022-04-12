@@ -1,5 +1,6 @@
 package com.example.coursework.service;
 
+import com.example.coursework.entity.Course;
 import com.example.coursework.entity.Groups;
 import com.example.coursework.payload.ApiResponse;
 import com.example.coursework.payload.GroupsDto;
@@ -10,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
@@ -36,8 +39,8 @@ public class GroupsService {
             groups.setEndsAt(groupsDto.getEndsAt());
 //            Course course = courseRepository.getById(groupsDto.getCourse().getId());
 //            groups.setCourse(new
-//                    HashSet<>(Collections.singletonList(
-//                            courseRepository.findCoursesById(
+//                    Set<Course>(Collections.singletonList(
+//                            courseRepository.getById(
 //                                    groupsDto.getId()))));
             groupsRepository.save(groups);
             return new ApiResponse(groupsDto.getId() != null ? "Edited" : "Saved", true);

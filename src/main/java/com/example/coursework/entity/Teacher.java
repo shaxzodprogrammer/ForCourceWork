@@ -19,13 +19,16 @@ public class Teacher {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(nullable = false)
     private String first_name;
 
+    @Column(nullable = false)
     private String last_name;
 
     @Column(length = 15)
     private String phone_number;
 
+    @Column(nullable = false)
     private String speciality;
 
     @Column(length = 2)

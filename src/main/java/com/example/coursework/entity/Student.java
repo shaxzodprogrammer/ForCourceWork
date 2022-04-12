@@ -17,8 +17,10 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(nullable = false)
     private String first_name;
 
+    @Column(nullable = false)
     private String last_name;
 
     @Column(length = 15)

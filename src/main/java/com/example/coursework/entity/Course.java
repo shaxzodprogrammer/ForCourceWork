@@ -18,8 +18,10 @@ public class Course {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(nullable = false,unique = true)
     private String subject;
 
+    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private CourceType type;
 

@@ -8,11 +8,11 @@ public class CommonUtills {
 
     public static void validatePageNumberAndSize(int page, int size) throws IllegalAccessException {
         if (page < 0) {
-            throw new IllegalAccessException("Sahifa soni noldan kam bo'lishi mumkin emas.");
+            throw new IllegalAccessException("Pages can`t be less than 0.");
         }
 
         if (size > com.example.coursework.utills.AppConst.MAX_PAGE_SIZE) {
-            throw new IllegalAccessException("Sahifa soni " + com.example.coursework.utills.AppConst.MAX_PAGE_SIZE + " dan ko'p bo'lishi mumkin emas.");
+            throw new IllegalAccessException("Pages can`t be more than " + com.example.coursework.utills.AppConst.MAX_PAGE_SIZE );
         }
     }
 

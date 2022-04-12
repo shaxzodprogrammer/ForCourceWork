@@ -16,14 +16,18 @@ public class Groups {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(nullable = false)
     private String name;
 
     private int numOfStudent;
 
+    @Column(nullable = false)
     private String startsAt;
 
+    @Column(nullable = false)
     private String endsAt;
 
+    @Column(nullable = false)
     @ManyToMany
     private Set<Course> course;
 }
